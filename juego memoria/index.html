@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de memoria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <button class="switch" id="switch">
+        <span><i class="fa-solid fa-sun"></i></span>
+        <span><i class="fa-solid fa-moon"></i></span>
+    </button>
+
+    <div class="c-body">
+        <div class="c-time">
+            <div class="screen">
+                <span id="time" class="tiempo">00:00:00.00</span>
+            </div>           
+        </div>        
+    </div>
+
+    <div id="tablero" class="tablero">
+    </div>
+    <br>
+    
+    <button id="btn-start" class="nuevo-juego" onclick="generarTablero()">
+        Nuevo Juego
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script src="script.js"></script>
+</body>
+
+</html>
