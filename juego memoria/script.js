@@ -6,7 +6,6 @@ btnSwitch.addEventListener('click', ()=>{
  });
  
 window.onload = () => {
-    h = 0;
     m = 0;
     s = 0;
     mls = 0;
@@ -23,7 +22,7 @@ let selecciones = []
 generarTablero()
 
 function write() {
-    let ht, mt, st, mlst;
+    let mt, st, mlst;
     mls++;
  
     if (mls > 99) {
@@ -38,19 +37,16 @@ function write() {
        h++;
        m = 0;
     }
-    if (h > 24) h = 0;
  
     mlst = ('0' + mls).slice(-2);
     st = ('0' + s).slice(-2);
     mt = ('0' + m).slice(-2);
-    ht = ('0' + h).slice(-2);
-    time.innerHTML = `${ht}:${mt}:${st}.${mlst}`;
+    time.innerHTML = `${mt}:${st}.${mlst}`;
    
  }
  function reset() {
     clearInterval(timeStarted);
-    time.innerHTML = "00:00:00.00"
-    h = 0;
+    time.innerHTML = "00:00.00"
     m = 0;
     s = 0;
     mls = 0;
@@ -103,6 +99,8 @@ function generarTablero() {
     }
     tarjetas.sort(() => Math.random() - 0.5)
     tablero.innerHTML = tarjetas.join(" ")
+    reset();
+    start()
 }
 
 function seleccionarTarjeta(i) {
